@@ -97,12 +97,6 @@ async def on_message(mes):
     if mes.author == client.user: return
     global etapa, hraje, editor, hraci, prefixy
 
-    if mes.content.startswith('py'):
-        if str(mes.author) != 'Histmy#4295':
-            await mes.channel.send('<:FU:674649887090147355>')
-            return
-        eval(mes.content[3:])
-
     prefix = prefixy.get(str(mes.guild.id), 'fotbal')
     # pokud zpráva začíná na prefix, a nebo tagnutím bota, přeskočí tento blok
     if not (mes.content.startswith(prefix) or mes.content.replace('!', '').startswith(f'<@{client.user.id}>')):
