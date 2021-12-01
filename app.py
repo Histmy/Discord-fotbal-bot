@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from json import loads as js_load, dumps as js_dump
+import os
 
 client = commands.Bot(command_prefix = '')
 
@@ -219,7 +220,7 @@ async def on_reaction_remove(reaction, user):
             if reaction.emoji == '🔔': hraci[i].notify = False
             break
 
-client.run('TOKEN')
+client.run(os.environ['TOKEN'])
 
 # TODOS:
     # TODO: vrátit na předchozího člověka
